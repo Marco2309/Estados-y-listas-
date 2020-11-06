@@ -1,6 +1,7 @@
 import React from 'react';
 import PostTweet from '../postTweet/post-tweet';
 import Feed from '../feed';
+import './styles.css'
 
 const PrimaryCol = (props) => {
     return (
