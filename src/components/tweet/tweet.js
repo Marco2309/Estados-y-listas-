@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import Icon from '../icon/icon.js'
 
 import {
     ChatSolid,
