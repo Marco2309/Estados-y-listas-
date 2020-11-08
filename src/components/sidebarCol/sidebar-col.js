@@ -21,7 +21,14 @@ class SidebarCol extends React.Component {
                 <div>
                     <h3>Qué está pasando?</h3>
                 {
-                    this.state.trending.map((trends) => <Trend title={trends.title} image={trends.image} category={trends.category} noTweets={trends.noTweets}/>)
+                    this.state.trending.map((trends, index) => 
+                    <Trend 
+                        key={index.toString()}
+                        title={trends.title} 
+                        image={trends.image} 
+                        category={trends.category} 
+                        noTweets={trends.noTweets}
+                    />)
                 }
                 </div>
             </div>
