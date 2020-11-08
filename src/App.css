@@ -41,6 +41,6 @@
 }
 
 .t-sidebar-col{
-  border: 1px dashed #000;
   width: 35%;
+  padding: 5px;
 }

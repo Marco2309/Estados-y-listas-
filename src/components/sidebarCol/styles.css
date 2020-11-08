@@ -1,6 +1,27 @@
+.searchConsole{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    padding: 0px;
+}
 .search {
-    margin: 2rem;
     border-radius: 20px;
     height: 1.5rem;
     width: 80%;
+    border:1px solid #AFAFAF;
+    margin: 0px;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    background-color: #e0e0e0;
+}
+.btn-search{
+    width:30px;
+    height: 30px;
+    left: 30px;
+    display: block;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    border:0px;
 }

@@ -1,7 +1,5 @@
 import React from 'react';
 import './styles.css';
-import Icon from '../icon/icon.js'
-
 import {
     ChatSolid,
     HeartSolid,
@@ -17,6 +15,9 @@ class Tweet extends React.Component{
               < HeartSolid />
             ]
         }
+    }
+    divide = (num)=>{
+        return(num/1000 > 1 ? (num/1000).toString()+' mil' : num);
     }
     render(){
         return (
@@ -39,15 +40,15 @@ class Tweet extends React.Component{
                 <div className="row space">
                     <span>
                         < ChatSolid />
-                        <p>{this.props.comments}</p>
+                        <p>{this.divide(this.props.comments)}</p>
                     </span>
                     <span>
                     < RefreshOutline />
-                        <p>{this.props.retweets}</p>
+                        <p>{this.divide(this.props.retweets)}</p>
                     </span>
                     <span>
                     < HeartSolid />
-                        <p>{this.props.likes}</p>
+                        <p>{this.divide(this.props.likes)}</p>
                     </span>
                 </div>
             </div>
