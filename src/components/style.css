@@ -1,0 +1,35 @@
+.imageNot{
+    width: 90px;
+    height: 60px;
+}
+.d-flex{
+    display: flex;
+}
+.flex-row{
+    flex-direction: row;
+} 
+.flex-column{
+    flex-direction: column;
+}
+.tweet_trend{
+    width: 100%;
+    padding: 10px;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.trending_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.content_trends{
+    text-align: justify;
+}
+.col-8{
+    width: 66.64%;
+}
+.col-4{
+    width: 33.36%;
+}
