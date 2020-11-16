@@ -15,6 +15,9 @@
     padding-left: 35px;
     background-color: #e0e0e0;
 }
+.search:focus, .btn-search:focus {
+    outline: none;
+}
 .btn-search{
     width:30px;
     height: 30px;

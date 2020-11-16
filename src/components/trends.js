@@ -6,13 +6,16 @@ const Trends = [
         noTweets:100000
     },
     {
+        image:'https://live.mrf.io/statics/i/ps/diariopresenterm.blob.core.windows.net.optimalcdn.com/images/2018/11/26/cropw0h0embrionhome.jpg?width=1200&enable=upscale',
+        category:'science',
+        title:'bebes modificados geneticamente',
+        noTweets:18900
+    },
+    {
         image:'https://phantom-marca.unidadeditorial.es/24aa49d8e9fe5510d842fe33732fb3f5/resize/414/f/jpg/assets/multimedia/imagenes/2020/11/06/16046925073481.png',
         category:'Sports',
         title:'Chivas vs monterrey',
         noTweets:8900
-    },
-    {
-        
     }
 ]
 

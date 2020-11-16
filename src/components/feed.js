@@ -10,16 +10,22 @@ class Feed extends React.Component {
         }
     }
 
+    clicInteraccions = (index,int) => {
+        // Object.keys(interaction)[3]  obtener el valor de un objeto en una posicion especifica
+        const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
+        const interactionStr = int.slice(0,-4)
+        let interactionBool = newTweets[index].interaction[int]
+        if(interactionBool){
+            newTweets[index].interaction[int] = !interactionBool
+            newTweets[index].interaction[interactionStr]--
+        }else{
+            newTweets[index].interaction[int] = !interactionBool
+            newTweets[index].interaction[interactionStr]++
+        }
+        this.setState({tweets: newTweets})
+    }
+
     render() {
-
-        // const {profile, profileName, username, content, display} = {
-        //     profile: "",
-        //     profileName: "",
-        //     username: "",
-        //     content: "",
-        //     display: ""
-        // };
-
         return (
             <div>
                 {
@@ -33,11 +39,13 @@ class Feed extends React.Component {
                                 content={tweet.content}
                                 comments={tweet.interaction.comments}
                                 retweets={tweet.interaction.retweets}
-                                likes={tweet.interaction.likes}/>
+                                likes={tweet.interaction.likes}
+                                id = {tweet.id}
+                                clic={this.clicInteraccions}
+                            />
                         )
                     })
                 }
-                
             </div>
         );
     }

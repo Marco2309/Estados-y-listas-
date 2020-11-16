@@ -38,19 +38,21 @@ class Tweet extends React.Component{
                     </p>
                 </div>
                 <div className="row space">
-                    <span>
+                    <span onClick={()=>this.props.clic(this.props.id, 'commentsDone')}>
+                        
                         < ChatSolid />
                         <p>{this.divide(this.props.comments)}</p>
                     </span>
-                    <span>
+                    <span onClick={()=>this.props.clic(this.props.id, 'retweetsDone')}>
                     < RefreshOutline />
                         <p>{this.divide(this.props.retweets)}</p>
                     </span>
-                    <span>
+                    <span onClick={()=>this.props.clic(this.props.id, 'likesDone')}>
                     < HeartSolid />
                         <p>{this.divide(this.props.likes)}</p>
                     </span>
                 </div>
+                <hr/>
             </div>
         )
     }
