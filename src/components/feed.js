@@ -25,14 +25,28 @@ class Feed extends React.Component {
         this.setState({tweets: newTweets})
     }
 
+    clicMenu = (index)=> {
+        const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
+        console.log('clicMenu',index)
+        newTweets[index].menu = !newTweets[index].menu
+        this.setState({tweets: newTweets})
+    }
+    
+    removeTweet = (index)=> {
+        const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
+        console.log('removeTweet',index)
+        newTweets.splice(index, 1)
+        this.setState({tweets: newTweets})
+    }
+
     render() {
         return (
             <div>
                 {
-                    this.state.tweets.map( (tweet, index) => {
+                    this.state.tweets.map( (tweet,i) => {
                         return (
                             <Tweet
-                                key={index.toString()}
+                                key={i}
                                 profile={tweet.profile}
                                 profileUrl={tweet.profileUrl}
                                 username={tweet.username}
@@ -41,7 +55,10 @@ class Feed extends React.Component {
                                 retweets={tweet.interaction.retweets}
                                 likes={tweet.interaction.likes}
                                 id = {tweet.id}
+                                menu = {tweet.menu}
                                 clic={this.clicInteraccions}
+                                clicMenu={this.clicMenu}
+                                remove = {this.removeTweet}
                             />
                         )
                     })

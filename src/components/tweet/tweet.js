@@ -1,7 +1,9 @@
 import React from 'react';
 import './styles.css';
+import Menu from '../menu/menu'
 import {
     ChatSolid,
+    DotsVerticalOutline,
     HeartSolid,
     RefreshOutline
 } from "@graywolfai/react-heroicons";
@@ -10,9 +12,10 @@ class Tweet extends React.Component{
         super(); //Es necesario colocar super para poder crear mi estado para este componente
         this.state = {
             iconArray: [ 
-              < ChatSolid />,
-              < RefreshOutline />, 
-              < HeartSolid />
+              <ChatSolid />,
+              <RefreshOutline />, 
+              <HeartSolid />,
+              <DotsVerticalOutline />
             ]
         }
     }
@@ -24,13 +27,20 @@ class Tweet extends React.Component{
             <div className="tweet-container">
                 <div className="row">
                     <div className="c1">
-                        <img src={this.props.profileUrl} alt="profile" /> {/*imagenes*/}
+                        <img src={this.props.profileUrl} alt="profile" />
                     </div>
                     <div className="c2">
                         <h6>{this.props.profile}</h6>
                         <h6>{this.props.username}</h6>
                     </div>
-                    <div className="c3"></div>
+                    <div className="c3" >
+                        <div className='dots' onClick={()=>this.props.clicMenu(this.props.id)}>
+                        <DotsVerticalOutline/>
+                        </div>
+                        {
+                            this.props.menu ? (<Menu id={this.props.id} remove={this.props.remove}/>):null
+                        }
+                    </div>
                 </div>
                 <div className="row">
                     <p className="content">                

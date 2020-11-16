@@ -17,7 +17,8 @@ const feed = [
             likesDone: false
         },
         verified: false,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 1,
@@ -35,7 +36,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 2,
@@ -53,7 +55,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 3,
@@ -70,7 +73,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 4,
@@ -88,7 +92,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 5,
@@ -107,7 +112,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 6,
@@ -124,7 +130,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 7,
@@ -141,7 +148,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
    {
         id: 8,
@@ -159,7 +167,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 9,
@@ -176,7 +185,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: false
+        blocked: false,
+        menu: false
     },
     {
         id: 10,
@@ -196,7 +206,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: true
+        blocked: true,
+        menu: false
     },
     {
         id: 11,
@@ -213,7 +224,8 @@ const feed = [
             likesDone: false
         },
         verified: true,
-        blocked: true
+        blocked: true,
+        menu: false
     }
 ];
 
