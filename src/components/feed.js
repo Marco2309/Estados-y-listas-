@@ -10,10 +10,11 @@ class Feed extends React.Component {
         }
     }
 
-    clicInteraccions = (index,int) => {
+    clicInteraccions = (id,int) => {
         // Object.keys(interaction)[3]  obtener el valor de un objeto en una posicion especifica
         const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
         const interactionStr = int.slice(0,-4)
+        const index = newTweets.findIndex(tweet => tweet.id === id)
         let interactionBool = newTweets[index].interaction[int]
         if(interactionBool){
             newTweets[index].interaction[int] = !interactionBool
@@ -25,16 +26,16 @@ class Feed extends React.Component {
         this.setState({tweets: newTweets})
     }
 
-    clicMenu = (index)=> {
+    clicMenu = (id)=> {
         const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
-        console.log('clicMenu',index)
+        const index = newTweets.findIndex(tweet => tweet.id === id)
         newTweets[index].menu = !newTweets[index].menu
         this.setState({tweets: newTweets})
     }
     
-    removeTweet = (index)=> {
+    removeTweet = (id)=> {
         const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
-        console.log('removeTweet',index)
+        const index = newTweets.findIndex(tweet => tweet.id === id)
         newTweets.splice(index, 1)
         this.setState({tweets: newTweets})
     }
