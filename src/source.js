@@ -228,7 +228,4 @@ const feed = [
         menu: false
     }
 ];
-
-export {
-    feed
-}
+export default feed

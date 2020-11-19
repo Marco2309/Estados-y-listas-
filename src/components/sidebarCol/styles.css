@@ -1,13 +1,19 @@
+.searchArea {
+    display: grid;
+    justify-content: center;
+    position: relative;
+}
 .searchConsole{
     display: flex;
     flex-direction: row;
-    margin: 5px;
+    margin: 5px 5px 0px 5px;
     padding: 0px;
+    position: relative;
 }
 .search {
     border-radius: 20px;
     height: 1.5rem;
-    width: 80%;
+    width: 100%;
     border:1px solid #AFAFAF;
     margin: 0px;
     display: block;

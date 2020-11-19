@@ -1,43 +1,70 @@
 import React from "react";
 import Tweet from "./tweet/tweet";
-import {feed} from '../source';
+import feed from '../source';
 
 class Feed extends React.Component {
     constructor() {
         super();
         this.state = {
-            tweets: feed
+            tweets: feed,
+            newTweet: '' 
         }
+    }
+    
+    addTweet = () => {
+        const clonTweets = JSON.parse(JSON.stringify(this.state.tweets))
+        const n = {
+            id: 11,
+            profile: "Marco Antonio",
+            username: "Marco2309",
+            profileUrl: '',
+            content: ``,
+            interaction: {
+                comments: this.props.message,
+                retweets: 0,
+                likes: 0,
+                commentsDone: false,
+                retweetsDone: false,
+                likesDone: false
+            },
+            verified: true,
+            blocked: true,
+            menu: false
+            }
+            
+            clonTweets.push(n)
+            this.setState({tweets: clonTweets})
+        
     }
 
     clicInteraccions = (id,int) => {
-        // Object.keys(interaction)[3]  obtener el valor de un objeto en una posicion especifica
-        const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
+        // Object.keys(nombre_objeto)[indice_llave]  obtener el nombre de la llave de un objeto en una posicion especifica
+        const clonTweets = JSON.parse(JSON.stringify(this.state.tweets))
         const interactionStr = int.slice(0,-4)
-        const index = newTweets.findIndex(tweet => tweet.id === id)
-        let interactionBool = newTweets[index].interaction[int]
+        const index = clonTweets.findIndex(tweet => tweet.id === id)
+        let interactionBool = clonTweets[index].interaction[int]
         if(interactionBool){
-            newTweets[index].interaction[int] = !interactionBool
-            newTweets[index].interaction[interactionStr]--
+            clonTweets[index].interaction[int] = !interactionBool
+            clonTweets[index].interaction[interactionStr]--
         }else{
-            newTweets[index].interaction[int] = !interactionBool
-            newTweets[index].interaction[interactionStr]++
+            clonTweets[index].interaction[int] = !interactionBool
+            clonTweets[index].interaction[interactionStr]++
         }
-        this.setState({tweets: newTweets})
+        this.setState({tweets: clonTweets})
     }
 
     clicMenu = (id)=> {
-        const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
-        const index = newTweets.findIndex(tweet => tweet.id === id)
-        newTweets[index].menu = !newTweets[index].menu
-        this.setState({tweets: newTweets})
+        const clonTweets = JSON.parse(JSON.stringify(this.state.tweets))
+        const index = clonTweets.findIndex(tweet => tweet.id === id)
+        clonTweets[index].menu = !clonTweets[index].menu
+        this.setState({tweets: clonTweets})
     }
     
     removeTweet = (id)=> {
-        const newTweets = JSON.parse(JSON.stringify(this.state.tweets))
-        const index = newTweets.findIndex(tweet => tweet.id === id)
-        newTweets.splice(index, 1)
-        this.setState({tweets: newTweets})
+        const clonTweets = JSON.parse(JSON.stringify(this.state.tweets))
+        const index = clonTweets.findIndex(tweet => tweet.id === id)
+        clonTweets.splice(index, 1)
+        this.setState({tweets: clonTweets})
     }
 
     render() {
