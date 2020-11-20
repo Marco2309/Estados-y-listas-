@@ -11,11 +11,17 @@ class PrimaryCol extends React.Component{
         }
     }
 
-    handleTwittear = (e,m) => {
-        this.setState({message: m})
-        e.preventDefault()
-    }
+    handleTwittear = (e) => {        
+        this.setState({message: e.target.value})  
+        this.chill.prueba(e)
 
+    }
+    prueba = (e)=>{
+        e.preventDefault()
+        this.chill.addTweet()
+        this.setState({message: ''})
+    }
+    
     render(){
         return (
             <div className="t-col-container">
@@ -23,9 +29,15 @@ class PrimaryCol extends React.Component{
                 <PostTweet 
                     profileUrl={this.props.profileUrl}
                     handleTwittear={this.handleTwittear}
+                    prueba={this.prueba}
+                    val={this.state.message}
                 />
-                {/* La funcion handleTwittear guarda el estado del componente pos-tweet en el estado de este componente y luego se manda como prop a feed */}
-                <Feed message={this.state.message}/>
+                {/* La funcion handleTwittear guarda en el estado el contenido del tweet y se manda a feed como prop*/}
+                <Feed 
+                    profileUrl={this.props.profileUrl}
+                    // message={this.state.message}
+                    ref={element => {this.chill = element}}
+                />
             </div>
         )
     }

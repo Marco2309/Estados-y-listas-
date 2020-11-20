@@ -17,10 +17,10 @@ class Feed extends React.Component {
             id: 11,
             profile: "Marco Antonio",
             username: "Marco2309",
-            profileUrl: '',
-            content: ``,
+            profileUrl: this.props.profileUrl,
+            content: this.state.newTweet,
             interaction: {
-                comments: this.props.message,
+                comments: 0,
                 retweets: 0,
                 likes: 0,
                 commentsDone: false,
@@ -32,7 +32,7 @@ class Feed extends React.Component {
             menu: false
             }
             
-            clonTweets.push(n)
+            clonTweets.unshift(n)
             this.setState({tweets: clonTweets})
         
     }
@@ -67,10 +67,15 @@ class Feed extends React.Component {
         this.setState({tweets: clonTweets})
     }
 
+    prueba = (e)=>{
+        this.setState({newTweet: e.target.value})
+    }
+
     render() {
         return (
+            
             <div>
-                {
+                {   
                     this.state.tweets.map( (tweet,i) => {
                         return (
                             <Tweet

@@ -16,6 +16,12 @@ const Trends = [
         category:'Sports',
         title:'Chivas vs monterrey',
         noTweets:8900
+    },
+    {
+        image:'https://assets.entrepreneur.com/content/3x2/2000/20181128160350-marihuana-cannabis.jpeg',
+        category:'Politics',
+        title:'Senado de México aprueba despenalización de la marihuana ',
+        noTweets:7900
     }
 ]
 
