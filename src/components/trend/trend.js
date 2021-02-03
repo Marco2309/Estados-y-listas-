@@ -1,5 +1,5 @@
 import React from 'react';
-import {RefreshSolid} from '@graywolfai/react-heroicons';
+// import {RefreshSolid} from '@graywolfai/react-heroicons';
 import '../style.css';
 
 class Trend extends React.Component{

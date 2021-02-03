@@ -13,6 +13,12 @@ const Trends = [
     },
     {
         
+    },
+    {
+        image:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSW4oVmpMRVIKwS-_afflO_DL6yYLzigqwJKg&usqp=CAU',
+        category:'videogame',
+        title:'Megaman x',
+        noTweets:10000
     }
 ]
 
